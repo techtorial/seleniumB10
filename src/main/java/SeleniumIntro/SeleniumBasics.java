@@ -8,7 +8,7 @@ public class SeleniumBasics {
 
     public static void main(String[] args) {
         // we are defining the chromedriver into the project as a property.
-        System.setProperty("webdriver.chrome.driver","chromedriver");
+        //System.setProperty("webdriver.chrome.driver","chromedriver");
         //WINDOWS
         //System.setProperty("webdriver.chrome.driver","chromedriver.exe");
 
