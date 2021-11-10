@@ -14,13 +14,10 @@ public class GoogleSearch {
 
     public static void main(String[] args) throws InterruptedException {
 
-        // WebDriverManager.firefoxdriver().setup();
-        System.setProperty("webdriver.firefox.marionette","geckodriver");
+         WebDriverManager.firefoxdriver().setup();
+     //   System.setProperty("webdriver.firefox.marionette","geckodriver");
 //        System.setProperty("webdriver.gecko.driver", "geckodriver");
-//        DesiredCapabilities dc = new DesiredCapabilities();
-//        dc.setCapability("marionatte", false);
-//        FirefoxOptions opt = new FirefoxOptions();
-//        opt.merge(dc);
+
         FirefoxDriver driver =  new FirefoxDriver();
        // WebDriver driver=new FirefoxDriver();
         driver.get("https://www.google.com/");
