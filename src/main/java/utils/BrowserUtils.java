@@ -1,17 +1,44 @@
 package utils;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Set;
+
 public class BrowserUtils {
 
-    // we will create our reusable methods related with browser
-    // inside the BrowserUtils class.
+    /* it will switch window to given target title */
+    public static void switchByTitle(WebDriver driver, String title){
+        Set<String> ids=driver.getWindowHandles();
+        for(String id:ids){
+            driver.switchTo().window(id);
+            if(driver.getTitle().contains(title)){
+                break;
+            }
+        }
+    }
 
-    /*
-    Method that accepts three param - WebElement and Value and MethodName
-    SelectByVisibleText
-     */
+    // implement the method that switch the window by url
+
+    /* it will close all the windows if it is not equals to given window title */
+    public static void closeWindowsByTitle(WebDriver driver, String title){
+        Set<String> ids=driver.getWindowHandles();
+        for(String id: ids){
+            driver.switchTo().window(id);
+            if(!driver.getTitle().equals(title)){
+                driver.close();
+            }
+        }
+    }
+
+    public static void scrollToView(WebDriver driver, WebElement element){
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true)",element);
+    }
+
+
     public static void selectBy(WebElement element, String value, String methodName){
         Select select= new Select(element);
         // method name can be text, index, value

@@ -1,16 +1,16 @@
 package JavaScriptExecutor;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
+import utils.BrowserUtils;
 
 public class JSPractice {
 
     @Test
     public void test(){
+       
         WebDriver driver=new ChromeDriver();
         driver.navigate().to("https://www.techtorialacademy.com/");
 
@@ -24,7 +24,7 @@ public class JSPractice {
         javascriptExecutor.executeScript("arguments[0].click()",browseCourse);
 
         WebElement copyRights=driver.findElement(By.xpath("//p[contains(text() ,'Copyrights')]"));
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView(true)", copyRights);
+        BrowserUtils.scrollToView(driver, copyRights);
         // find the student login button on the top of the page
         // and scroll the page to top till studentLogin button is visible.
 
