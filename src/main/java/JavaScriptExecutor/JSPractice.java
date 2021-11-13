@@ -10,7 +10,7 @@ public class JSPractice {
 
     @Test
     public void test(){
-       
+
         WebDriver driver=new ChromeDriver();
         driver.navigate().to("https://www.techtorialacademy.com/");
 
