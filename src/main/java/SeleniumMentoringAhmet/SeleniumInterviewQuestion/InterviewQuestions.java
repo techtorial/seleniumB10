@@ -72,7 +72,7 @@ public class InterviewQuestions {
      I would definitely check the tag of the location.
         *If the tag is select --> I use select CLASS  Select select = new Select(webelement)
         *if the tag is not select --> i use locators to locate the elements
-        *I can also use ACTION CLASS to handle the drop downs. **** (movetoElement)
+        *I can also use ACTIONS CLASS to handle the drop downs. **** (movetoElement)
 
      11) WHAT ARE THE METHODS OF SELECT ?
 
@@ -95,6 +95,121 @@ public class InterviewQuestions {
       *Navigate to the another page.
 
        *****I CAN HANDLE WITH (refreshing the website  or reinitiliaze the driver)
+
+      14)How do you handle alerts?
+
+      *Operation System Alert :I cannot handle it directly. I need to use ROBOT
+      Class to handle it.
+      *HTML Alert :I just need to find the element Click the Button you want.
+      *JavaScript(Browser) Alert : Alert Class
+
+       15) FOR THE ALERT Interface WHAT KIND OF METHODS DO YOU KNOW?
+       *Alert alert= driver.switchto.Alert()
+       *Accept --> ok
+       *Dismiss--> cancel
+       *sendkeys() -- > sendkeys
+       *getText()-->get the text
+
+       16) What do you know about iframe(Frame)? Can you tell me the type that you used before ?
+       and How do you handle the iframe?
+       Different Types: Here is the scenario we have a website and I would like to get the text of price
+       from products. all xpath is correct and there is problem with attribute as well. BUT i cannot
+       get it. What do you think the reasons could be?
+
+       ** The reason could be the Iframe,so I basically go to the website and in the dom I just
+       search for the iframe.
+       ??check the exception ???
+
+       *iframe is the html inside of the another html>?
+       *driver.switchto().frame(1)
+       ******* driver.switcht().defaultContent() ************
+       *driver.switchto()frame(2)
+       *** if you have multiple iframes into each other. Then I should use
+       driver.switchto()ParentFrame()
+
+       17) What do you know about ACTIONS CLASS?
+
+       *Actions class is really usefull to handle some issues in my project since I use some
+       actions class methods. Some of the important ones are :
+       *SendKeys
+       *DoubleClick
+       *ClickAndHold
+       *DragAndDrop
+       *MoveToElements
+       *ContextClick(rightClick)
+       *Click
+
+       Select select = new Select(WebElement);--> select tagname
+       Actions action = new Actions(driver); --> anytime
+
+       *sdsds.click.PERFORM() --> YOU MUST SAY PERFORM AT THE END otherwise it will not execute.
+
+       18)What is the difference between Find Element and Find Elements?
+
+      *Find ELement--> Return single webelement
+          Once the elements is not found  *** it throws the NoSUchElement Exception
+
+
+      *Find Elements--> return the list of the elements
+            You can access the elements by using the index number
+            *Once the elements is not found ** it doesn't throw any exception but it returns
+            EMPTY LIST.
+
+       19) Difference between isDisplayed? isEnabled? and IsSelected ?
+       *IsDisplayed -- >it displayeds the elements it is VISIBLE or not
+       *isEnabled --> the elements is enabled or not
+       *IsSelected -->the elements is selected or not.
+
+       20)what is the difference between check box and radio button?
+
+        * Selected and checkbox mentally is similary but the difference is you can only
+        choose one radio button option
+        *For the selected you can choose as many as you want.
+
+
+        21) How do you switch the windows (2 windows) from one to another ?
+
+        I switch the windows by using driver.switchto().window(id) -->
+
+        String mainWindow = driver.getWindowHandle() -- >it returns String "id"
+
+        Set<String> ids = driver.getWindowHandles()--> it returns the set of the ids
+        ********
+        for(String id : ids){  facebook page (id 12345 and twitter page (1234567)
+        if(!id.equals(mainWindow){
+        driver.switchto().window
+
+        }
+
+        for(String id : ids){  facebook page (id 12345 and twitter page (1234567), ebay page (2131253)
+         // driver.switchto.window.id
+        if(!driver.getTitle.equals(ebayPage){
+            driver.switchto.window.id
+
+        }
+
+
+
+
+
+
+
+
+
+        22)How do you switch the multiple windows(more than 2) from one to another?
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
