@@ -32,7 +32,6 @@ public class DepartmentTest extends TestBase {
         Thread.sleep(500);
         String actualMessage=departmentPage.getSuccessMessage();
         Assert.assertEquals(actualMessage,"Department added successfully.");
-
     }
 
 
