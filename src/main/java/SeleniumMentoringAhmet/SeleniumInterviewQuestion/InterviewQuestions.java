@@ -74,7 +74,7 @@ public class InterviewQuestions {
         *if the tag is not select --> i use locators to locate the elements
         *I can also use ACTIONS CLASS to handle the drop downs. **** (movetoElement)
 
-     11) WHAT ARE THE METHODS OF SELECT ?
+     11) WHAT ARE THE METHODS OF SELECT ? ******
 
        Select class is really useful to locate the elements
        * I can locate the elements with
@@ -89,7 +89,7 @@ public class InterviewQuestions {
       *NoSuchWindow Exception
       *NoSuchFrame Exception
 
-      13) In what condition do you get StaleElementReference Exception?
+      13) In what condition do you get StaleElementReference Exception? How do you handle it
 
       *Once the element is not there anymore.
       *Navigate to the another page.
@@ -111,7 +111,7 @@ public class InterviewQuestions {
        *getText()-->get the text
 
        16) What do you know about iframe(Frame)? Can you tell me the type that you used before ?
-       and How do you handle the iframe?
+       and How do you handle the iframe? *******
        Different Types: Here is the scenario we have a website and I would like to get the text of price
        from products. all xpath is correct and there is problem with attribute as well. BUT i cannot
        get it. What do you think the reasons could be?
@@ -136,7 +136,7 @@ public class InterviewQuestions {
        *ClickAndHold
        *DragAndDrop
        *MoveToElements
-       *ContextClick(rightClick)
+       *ContextClick(rightClick) ***
        *Click
 
        Select select = new Select(WebElement);--> select tagname
@@ -144,7 +144,7 @@ public class InterviewQuestions {
 
        *sdsds.click.PERFORM() --> YOU MUST SAY PERFORM AT THE END otherwise it will not execute.
 
-       18)What is the difference between Find Element and Find Elements?
+       18)What is the difference between Find Element and Find Elements? ****
 
       *Find ELement--> Return single webelement
           Once the elements is not found  *** it throws the NoSUchElement Exception
@@ -181,24 +181,64 @@ public class InterviewQuestions {
 
         }
 
-        for(String id : ids){  facebook page (id 12345 and twitter page (1234567), ebay page (2131253)
-         // driver.switchto.window.id
-        if(!driver.getTitle.equals(ebayPage){
-            driver.switchto.window.id
-
-        }
-
-
-
-
-
-
-
 
 
         22)How do you switch the multiple windows(more than 2) from one to another?
 
+   for(String id : ids){  facebook page (id 12345 and twitter page (1234567), ebay page (2131253)
 
+        if(!driver.getTitle.equals(ebayPage){
+            driver.switchto.window.id
+        }
+
+        23) How do you scroll down the page from Web Browser? ***
+
+        -I would use JavaScript with ScrollIntoView and Point Class
+
+        24)How do you download and upload file in Selenium?
+
+        -Selenium itself CANNOT verify file downloads, can click on download
+        link but can not go outside the browser and open the downloaded file.
+        -Selenium handles the upload, but does it differently compared to actual user
+
+            *Find the element that triggers the upload window
+            *Find the path of the file you want to upload
+
+            driver.findElement(uploadbutton location).sendKeys(file)
+            file="C://Users//And Desktop//folder
+
+
+          25) WHAT IS THE DIFFERENCE BETWEEN ASSERT AND SOFT ASSERT?
+
+            Assert: is a class that have some methods to validate the actual and expected data.
+            the methods like equal, true,false we can do validation.(like comparison actual-expected)
+            *******Once you use Assertion for validation, if code fails it will
+            RIGHT AWAY THROWS THE exception which will stop the execution. (1000 test case
+            example remember that)
+
+            SoftAssert: is a class that have some methods to validate the actual and expected data.
+            the methods like equal, true,false we can do validation.(like comparison actual-expected)
+
+            ***** ONCE you use Soft Assertion for validation, if code fails it will not THROWS
+            exception RIGHT AWAY and it will keep executing the codes. At the end you can see
+            the failing ones to fix it.
+            ****** DO NOT FORGET TO USE SOFTASSERT.ALL at the end otherwise all test
+            scenarios will pass.(might cause some issues)
+          25-1) WHAT IS THE DIFFERENCE BETWEEN VALIDATION AND VERIFICATION?
+            Validation is executing the codes
+            Verification is the reading the codes NO EXECUTION.
+
+            POM: is the way to organize your implementation, test scenarios, specific methods
+            (TestBase, Pages, Test,UTILS...) that help to better understand structure of the PROJECT.
+
+            Timer : 10 min
+            1- I want you go to amazon
+            2- i want you click Hello-Sign in Account&List
+            3-click sign in button
+            4-Click Create your amazon account
+            5-fill the fields
+            6-CLick continue
+            7-Validate the message
 
 
 
