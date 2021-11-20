@@ -1,10 +1,11 @@
 package utils;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -54,6 +55,20 @@ public class BrowserUtils {
     // method will get the text from the webelement and trim it.
     public static String getText(WebElement element){
         return element.getText().trim();
+    }
+
+    public static void getScreenShot(WebDriver driver, String packageName){
+        // getScreenShotAs method is taking a screenshot and returning the file of this screen.
+        File file=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        ///Users/techtorial/Downloads/seleniumB10
+        String location=System.getProperty("user.dir")+"/src/main/java/screenshot/"+packageName+"/";
+        //WINDOWS: String location=System.getProperty("user.dir")+"\\src\\main\\screenshot\\"+packageName+"\\";
+        try {
+            FileUtils.copyFile(file,new File(location+System.currentTimeMillis()+".png"));
+        } catch (IOException e) {
+            System.out.println("Screenshot is not stored.");
+            e.printStackTrace();
+        }
     }
 
 }
