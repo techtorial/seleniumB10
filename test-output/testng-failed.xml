@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Etsy Runner]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Search Bar(failed)">
+    <parameter name="item" value="java programming mug"/>
+    <classes>
+      <class name="com.test.etsy.tests.EtsyTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="test"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.test.etsy.tests.EtsyTest -->
+    </classes>
+  </test> <!-- Search Bar(failed) -->
+</suite> <!-- Failed suite [Etsy Runner] -->
