@@ -240,6 +240,46 @@ public class InterviewQuestions {
             6-CLick continue
             7-Validate the message
 
+            26) What do you know about the wait times ?
+
+            Implicit Wait: is a wait which waits for a specified time while locating
+            an element before throwing "NOSUCHELEMENT EXCEPTION"
+            *LOGIC:As by default selenium tries to find elements immediately without any wait
+           ,so it is good to use implicit wait.This wait applied to ALL ELEMENTS of the current
+           driver instance
+           EXplicit wait : is a wait which applied to a particular webelement until the EXPECTED
+           CONDITION specified is met.
+
+           ****SUMMARY: implicit wait is simply, if condition is met before the timeout,
+           it will continue to next step, if conditions is not met within the timeout
+           throw nosuchelement exception.
+
+           ** Explicit; element is visible, clickable, enable,
+
+
+           27) CVS QUESTION: 1) We have different customers for the specific website login
+           I would like to test our all customers login functionality in the framework(automation)
+           How would you test it ?
+
+           In my project I was using data provider annotation which is really useful to apply
+           different set of data for the same phenomena.(situation)
+
+          * I implemented the data provider as an annotation for the test unit and the MULTIDIMENSIONAL
+          array of the object method. It means they are connected and DATA IS COMING FROM THAT METHOD.
+
+
+
+           28) Can you talk about your framework from any previous company?
+
+            * Always start general information about your framework.(In my previous company i was using BDD framework with
+            PAGE OBJECT MODEL WHICH IS a really cool way to organize all the structure of the project)
+               * PAGE OBJECT MODEL --> give more details
+            * JAVA
+            * SELENIUM
+            *TESTNG, JUNIT,
+            *MAVEN, POM xml--> store my dependencies
+            *runner class --> to execute the tests
+
 
 
 
