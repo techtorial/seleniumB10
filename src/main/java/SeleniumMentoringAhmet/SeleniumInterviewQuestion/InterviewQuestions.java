@@ -104,23 +104,23 @@ public class InterviewQuestions {
       *JavaScript(Browser) Alert : Alert Class
 
        15) FOR THE ALERT Interface WHAT KIND OF METHODS DO YOU KNOW?
-       *Alert alert= driver.switchto.Alert()
+       *Alert selenium.alert= driver.switchto.Alert()
        *Accept --> ok
        *Dismiss--> cancel
        *sendkeys() -- > sendkeys
        *getText()-->get the text
 
-       16) What do you know about iframe(Frame)? Can you tell me the type that you used before ?
-       and How do you handle the iframe? *******
+       16) What do you know about selenium.iframe(Frame)? Can you tell me the type that you used before ?
+       and How do you handle the selenium.iframe? *******
        Different Types: Here is the scenario we have a website and I would like to get the text of price
        from products. all xpath is correct and there is problem with attribute as well. BUT i cannot
        get it. What do you think the reasons could be?
 
        ** The reason could be the Iframe,so I basically go to the website and in the dom I just
-       search for the iframe.
+       search for the selenium.iframe.
        ??check the exception ???
 
-       *iframe is the html inside of the another html>?
+       *selenium.iframe is the html inside of the another html>?
        *driver.switchto().frame(1)
        ******* driver.switcht().defaultContent() ************
        *driver.switchto()frame(2)
