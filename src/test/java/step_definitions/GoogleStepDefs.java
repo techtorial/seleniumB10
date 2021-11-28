@@ -10,11 +10,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import pages.GoogleSearchPage;
+import pages.GoogleSearchResultPage;
 
 import java.util.List;
 
 public class GoogleStepDefs {
     WebDriver driver;
+    GoogleSearchPage googleSearchPage;
+    GoogleSearchResultPage googleSearchResultPage;
 
     @Given("I navigated to google.com")
     public void i_navigated_to_google_com() {
@@ -37,6 +41,18 @@ public class GoogleStepDefs {
         System.out.println("Validating the result");
         List<WebElement> linkList = driver.findElements(By.tagName("a"));
         Assert.assertTrue(linkList.size() > expectedLinks);
+    }
+
+    @When("I search for {string}")
+    public void myFavoriteMethod(String searchCriteria) {
+        googleSearchPage = GoogleSearchPage.instanciateGoogleSearchPage(driver);
+        googleSearchPage.googleSearch(searchCriteria);
+    }
+
+    @Then("I should get {int} results")
+    public void i_should_get_results(Integer resultCount) {
+        googleSearchResultPage = new GoogleSearchResultPage(driver);
+        Assert.assertTrue(googleSearchResultPage.getNoResultsText().contains("did not match any documents"));
     }
 
 
