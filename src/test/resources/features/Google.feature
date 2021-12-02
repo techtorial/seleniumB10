@@ -14,7 +14,38 @@ Feature: Testing google functionalities
 
 
 
-
+@dryRunTest
+  Scenario: Google search negative scenario dfd
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    When I search for "kladjfladdlkfjdklajf"
+    Then I should get 0 results
+    Then I validate something
+    And I validate another thing
 
 
 

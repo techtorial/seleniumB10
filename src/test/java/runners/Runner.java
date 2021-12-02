@@ -8,9 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "step_definitions",
-        tags = "@smoketest",
+        tags = "@datatable",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        plugin = {"json:target/report.json", "rerun:target/rerun.txt"}
+        plugin = {"json:target/report.json", "rerun:target/rerun.txt"},
+        dryRun = false
 )
 public class Runner {
 }
