@@ -40,8 +40,8 @@ public class OpenMRSStepDefs {
 
     }
 
-    @Given("I'm logged in to OpenMRS with admin and Admin123")
-    public void i_m_logged_in_to_open_mrs_with_admin_and_admin123() {
+    @Given("I'm logged in to OpenMRS with {string} and {string}")
+    public void i_m_logged_in_to_open_mrs_with_admin_and_admin123(String username, String password) {
 
     }
 

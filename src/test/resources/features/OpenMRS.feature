@@ -1,5 +1,6 @@
 Feature: Open MRS tests
 
+  @ignore @badScenario @notRun @forgetAboutMe
   Scenario: Register a patient
     Given I'm logged in to OpenMRS with following credentials:
       | username | admin    |
@@ -14,9 +15,9 @@ Feature: Open MRS tests
       | Address    | 2200 E Devon ave |
       | Phone      | 3123123123       |
 
-
+  @smoketest
   Scenario Outline:
-    Given I'm logged in to OpenMRS with <username> and <password>
+    Given I'm logged in to OpenMRS with "<username>" and "<password>"
     When I register a new patient with "<GivenName>", "<FamilyName>", "<Gender>", <Day>, "<Month>", <Year>, "<Address>" and <Phone>
 
     Examples:
@@ -25,6 +26,11 @@ Feature: Open MRS tests
       | Sarah     | Green      | Female | 31  | March   | 1969 | Chicago | 1234531 | admin    | Admin123 |
 
 
+
+    @test
+    Scenario:  Test scenario
+      When I test OpenMRS
+      Then test passes
 
 
 
