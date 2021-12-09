@@ -1,5 +1,6 @@
 package api.get;
 
+import api.pojo.PetPojo;
 import io.restassured.RestAssured;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
@@ -33,6 +34,24 @@ public class Petstore {
 
         System.out.println(deserializedResponse.get("tags"));
 //        System.out.println(deserializedResponse.get("name"));
+    }
+
+
+    @Test
+    public void pojoParseTest() {
+        Response response = RestAssured.given().header("Accept", "application/json")
+                .when().get("https://petstore.swagger.io/v2/pet/10")
+                .then().statusCode(200).extract().response();
+
+        PetPojo petPojo = response.as(PetPojo.class);
+
+        System.out.println(petPojo.getId());
+        System.out.println(petPojo.getCategory());
+        System.out.println(petPojo.getName());
+        System.out.println(petPojo.getStatus());
+        System.out.println(petPojo.getTags());
+
+
     }
 
 

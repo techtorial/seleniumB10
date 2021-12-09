@@ -1,5 +1,6 @@
 package api.get;
 
+import api.pojo.PokemonPojo;
 import io.restassured.RestAssured;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
@@ -51,12 +52,31 @@ public class Pokemon {
         Map<String, Object> pokemonMap = response.as(new TypeRef<Map<String, Object>>() {
         });
         List<Map<String, String>> pokemonList = (List<Map<String, String>>) pokemonMap.get("results");
-        for (Map<String, String> pokemon : pokemonList){
+        for (Map<String, String> pokemon : pokemonList) {
             String name = pokemon.get("name");
-            if (name.equalsIgnoreCase("Pikachu")){
+            if (name.equalsIgnoreCase("Pikachu")) {
                 System.out.println(pokemon.get("url"));
             }
         }
+
+
+    }
+
+    @Test
+    public void test3() {
+        //https://pokeapi.co/api/v2/pokemon
+        Response response = RestAssured.given().accept("application/json")
+                .when().get("https://pokeapi.co/api/v2/pokemon")
+                .then().statusCode(200)
+                .and()
+                .contentType("application/json; charset=utf-8")
+                .extract().response();
+
+        PokemonPojo pokemon = response.as(PokemonPojo.class);
+        System.out.println(pokemon.getCount());
+
+        Assert.assertEquals(pokemon.getCount(), 1118);
+        System.out.println(pokemon.getNext());
 
 
     }
