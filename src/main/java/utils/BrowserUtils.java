@@ -44,10 +44,10 @@ public class BrowserUtils {
         Select select= new Select(element);
         // method name can be text, index, value
         switch (methodName) {
-            case "text" -> select.selectByVisibleText(value);
-            case "value" -> select.selectByValue(value);
-            case "index" -> select.selectByIndex(Integer.parseInt(value));
-            default -> System.out.println("Method name is not available. Use text, value, or index for method name");
+            //case "text" -> select.selectByVisibleText(value);
+            //case "value" -> select.selectByValue(value);
+            //case "index" -> select.selectByIndex(Integer.parseInt(value));
+            //default -> System.out.println("Method name is not available. Use text, value, or index for method name");
         }
 
     }
